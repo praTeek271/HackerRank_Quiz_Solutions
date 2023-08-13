@@ -1,5 +1,5 @@
-SELECT pt.stock_code
-FROM price_today pt
-JOIN price_tomorrow ptom ON pt.stock_code = ptom.stock_code
-WHERE ptom.price > pt.price
-ORDER BY pt.stock_code;
+SELECT e.employee_ID, e.name
+FROM employee_information e
+JOIN last_quarter_bonus b ON e.employee_ID = b.employee_ID
+WHERE e.division = 'HR' AND b.bonus >= 5000
+ORDER BY e.employee_ID;
